@@ -70,3 +70,25 @@ This should show something like:
 |    0    431923      C   python                                     15420MiB |
 +-----------------------------------------------------------------------------+
 ```` 
+
+
+## Potential Problems 
+
+### SCW_TPN_OVERRIDE error
+Hawk will not let you submit a single core job to the GPU partition without first running the commmand:
+`export SCW_TPN_OVERRIDE=1`
+
+This shouldn't be required on Sunbird.
+
+
+### CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+If you've not used Anaconda before run the command (WARNING: this will delete your Conda environments if you have used Anaconda before).
+```
+rm -rf ~/.conda
+echo ". /apps/languages/anaconda3/etc/profile.d/conda.sh" >> ~/.bashrc
+rm -rf ~/TensorFlow-GPU-Example
+```
+
+Now re-run the setup instructions.
+
+
