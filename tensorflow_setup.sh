@@ -4,8 +4,8 @@ filecount=`myquota | tail -1 | awk '{print $4}'`
 filelimit=$[`myquota | tail -1 | awk '{print $5}' | tr -d 'k'`*1000]
 
 #check user has enough files left
-if [ $[$filelimit-$filecount] -lt "25000" ] ; then
-  echo "This script requires the creation of approximately 25,000 files"
+if [ $[$filelimit-$filecount] -lt "40000" ] ; then
+  echo "This script requires the creation of approximately 40,000 files"
   echo "You currently have $filecount files out of a limit of $filelimit"
   echo "Please delete some files before proceeding" 
   echo "You can check how many files you have by looking at the 'files' column in the myquota command"
